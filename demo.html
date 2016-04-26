@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>固定列--Grid</title>
+  <link data-jsfiddle="common" rel="stylesheet" media="screen" href="./konishileetable.css">
+  <script data-jsfiddle="common" src="./konishileetable.js"></script>
+  <meta property="og:title" content="Fixed Rows &amp; Columns">
+</head>
+
+<body>
+
+
+<div class="wrapper">
+  <div class="wrapper-row">
+    <div id="global-menu-clone">
+      <h1><a href="./demo.html">固定列Grid</a></h1>
+
+    </div>
+
+    <div id="container">
+      <div class="columnLayout">
+
+        <div class="rowLayout">
+          <div class="descLayout">
+            <div class="pad" data-jsfiddle="example1">
+              <h2>怎样使用具有固定列的Grid</h2>
+
+              <p>只需要引用konishileetable.js And konishileetable.css</p>
+
+              <pre id="positions"></pre>
+
+              <div id="example1" style="width: 600px; height: 400px; overflow: hidden;"></div>
+            </div>
+          </div>
+
+          <div class="codeLayout">
+            <div class="pad">
+
+              <script data-jsfiddle="example1">
+                /**
+                 * Container looks like this:
+                 *
+                 * <div id="example1" style="width: 400px; height: 300px; overflow: hidden"></div>
+                 */
+                var myData = Handsontable.helper.createSpreadsheetData(1000, 100),
+                  container = document.getElementById('example1'),
+                  positions = document.getElementById('positions'),
+                  hot;
+
+                hot = new Handsontable(container, {
+                  data: myData,
+                  colWidths: [65, 47, 47, 47, 47, 47, 47, 47, 47, 47],
+                  rowHeaders: true,
+                  colHeaders: true,
+                  fixedRowsTop: 2,
+                  fixedColumnsLeft: 2,
+                  contextMenu: true
+                });
+
+                setInterval(function () {
+                  var str = '';
+
+                  str += 'rowOffset: ' + hot.rowOffset();
+
+                  positions.innerHTML = str;
+                }, 100);
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>

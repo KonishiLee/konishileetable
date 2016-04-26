@@ -1,0 +1,11 @@
+{
+  "name": "konishileetable",
+  "version": "1.0.1",
+  "description": "## Full distribution (recommended)",
+  "main": "konishileetable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KonishiLee",
+  "license": "ISC"
+}
